@@ -1,11 +1,13 @@
 package Excersise2;
 
+import Excercise2/Card
+
 public class Program {
-    public static void main(String[] args) {
-        Card_B c1 = new Card_B(9, "diamonds");
-        Card_B c2 = new Card_B(9, "hearts");
-        Card_B c3 = new Card_B(17, "diamonds");
-        Card_B c4 = new Card_B(9, "clover");
+    fun main() {
+        var c1 = Card(9, "diamonds");
+        var c2 = Card(9, "hearts");
+        var c3 = Card(17, "diamonds");
+        var c4 = Card(9, "clover");
 
         System.out.printf("Is card from standart Deck?\nc1:\t%b\nc2:\t%b\nc3\t%b\nc4\t%b\n",
                 c1.IsCardFromStandartDeck(), c2.IsCardFromStandartDeck(), c3.IsCardFromStandartDeck(),
