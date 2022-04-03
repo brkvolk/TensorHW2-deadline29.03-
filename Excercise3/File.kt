@@ -1,18 +1,20 @@
 package Excersise4;
 
-public class File extends AbstractFileSystemNode {
-    String Extension;
+class File(_name: String, exstention: String) : AbstractFileSystemNode() {
+    override var name: String = _name
+    var Extension: String = exstention
+    override var parent: IFileSystemNode? = null
+        set(value) {
+            parent = value
+            path = parent?.GetPath() ?: "/"
+        }
+    override var path: String = parent?.GetPath() ?: "/"
+        set(value) {
+            parent?.GetPath() ?: "/"
+        }
 
-    public File(String name, String exstention) {
-        this.name = name;
-        this.Extension = exstention;
-    }
+    fun GetExtensin() = Extension
 
-    public String GetExtensin() {
-        return Extension;
-    }
+    fun GetFilePath(): String = this.path
 
-    public String GetFilePath() {
-        return this.path;
-    }
 }

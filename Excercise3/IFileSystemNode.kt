@@ -1,13 +1,12 @@
 package Excersise4;
 
-public interface IFileSystemNode {
+interface IFileSystemNode {
 
-    IFileSystemNode GetParent();
+    fun GetParent(): IFileSystemNode?;
 
-    String GetName();
+    fun GetName(): String;
 
-    String GetPath();
+    fun GetPath(): String;
 
-    void ChangeParent(IFileSystemNode newParent);
-
+    fun ChangeParent(newParent: IFileSystemNode): Unit;
 }

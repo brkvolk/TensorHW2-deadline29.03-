@@ -1,29 +1,32 @@
 package Excersise4;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class Folder extends AbstractFileSystemNode {
-    List<IFileSystemNode> Children;
+public class Folder(name: String, vararg newChildren: IFileSystemNode) : AbstractFileSystemNode() {
 
-    public Folder(String name, IFileSystemNode... newChildren) {
-        this(name);
-        for (IFileSystemNode newChild : newChildren)
-            this.AddChild(newChild);
+    override var name: String
+        get() = name
+        set(value) {
+            name = value
+        }
+    override var path: String
+        get() = path
+        set(v) {
+            path = "/$name"
+        }
+    override var parent: IFileSystemNode? = null
+
+    var Children: MutableList<IFileSystemNode>? = null
+
+    init {
+        for (newChild in newChildren)
+            this.AddChild(newChild)
     }
 
-    public Folder(String name) {
-        this.name = name;
-        this.path = "/" + this.name;
-        Children = new ArrayList<IFileSystemNode>();
-    }
+    fun GetChildren(): MutableList<IFileSystemNode>? = Children
 
-    public List<IFileSystemNode> GetChildren() {
-        return Children;
-    }
-
-    public void AddChild(IFileSystemNode newChild) {
-        newChild.ChangeParent(this);
-        this.Children.add(newChild);
+    fun AddChild(newChild: IFileSystemNode) {
+        newChild.ChangeParent(this)
+        this.Children?.add(newChild)
     }
 }

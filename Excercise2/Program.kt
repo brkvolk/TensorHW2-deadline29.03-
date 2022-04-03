@@ -1,6 +1,5 @@
 package Excersise2;
 
-import Excercise2/Card
 
 public class Program {
     fun main() {
@@ -25,6 +24,6 @@ public class Program {
 
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");
         System.out.printf("Compare:\nc1 ^ c3:\t%d\nc1 ^ c2:\t%d\nStatic:\nc1 ^ c3:\t%d\nc2 ^ c1:\t%d\n\nc3 ^ c4:\t%d",
-                c1.Compare(c3), c1.Compare(c2), Card_B.Compare(c1, c3), Card_B.Compare(c2, c1), c3.Compare(c4));
+                c1.Compare(c3), c1.Compare(c2), Compare(c1, c3), Compare(c2, c1), c3.Compare(c4));
     }
 }
